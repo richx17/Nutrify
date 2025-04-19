@@ -1,0 +1,2 @@
+D:/FoodScanAI/android/app/.cxx/Debug/3x31382t/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/FoodScanAI/android/app/.cxx/Debug/3x31382t/armeabi-v7a/CMakeFiles/rebuild_cache.dir

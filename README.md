@@ -1,5 +1,4 @@
-# Food Scan AI
-
+q
 A Flutter application that helps users track their nutritional intake by analyzing food product labels and meals using AI.
 
 ## Features

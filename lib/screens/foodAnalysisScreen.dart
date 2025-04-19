@@ -42,7 +42,15 @@ class _FoodAnalysisScreenState extends State<FoodAnalysisScreen> {
             ),
           ),
         ),
-        title: const Text('Food Analysis'),
+        title: const Text(
+          'Food Analysis',
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -66,7 +74,7 @@ class _FoodAnalysisScreenState extends State<FoodAnalysisScreen> {
                             'Analysis Results',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                color: Theme.of(context).colorScheme.onSurface,
+                                color: Theme.of(context).colorScheme.onPrimary,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Poppins'),
@@ -87,7 +95,7 @@ class _FoodAnalysisScreenState extends State<FoodAnalysisScreen> {
                           child: Text(
                             'Analysis Results',
                             style: TextStyle(
-                                color: Theme.of(context).colorScheme.onSurface,
+                                color: Theme.of(context).colorScheme.onPrimary,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Poppins'),

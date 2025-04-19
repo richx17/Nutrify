@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton.icon(
-          icon: const Icon(Icons.qr_code_scanner_outlined, color: Colors.white),
+          icon: const Icon(Icons.qr_code_scanner_outlined, color: Colors.black),
           label: const Text("Scan Now",
               style: TextStyle(
                   fontFamily: 'Poppins', fontWeight: FontWeight.w400)),
@@ -64,15 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
         const SizedBox(width: 16),
         ElevatedButton.icon(
           icon: Icon(Icons.photo_library,
-              color: Theme.of(context).colorScheme.onSurface),
+              color: Colors.black), //Theme.of(context).colorScheme.onSurface),
           label: const Text("Gallery",
               style: TextStyle(
                   fontFamily: 'Poppins', fontWeight: FontWeight.w400)),
           style: ElevatedButton.styleFrom(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            backgroundColor: Theme.of(context).colorScheme.cardBackground,
-            foregroundColor: Theme.of(context).colorScheme.onSurface,
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimary,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           ),
           onPressed: () => _handleImageCapture(ImageSource.gallery),
@@ -100,14 +100,14 @@ class _MyHomePageState extends State<MyHomePage> {
             title: Text(
               'Now capture nutrition label',
               style: TextStyle(
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   fontFamily: 'Poppins'),
             ),
             content: Text(
               'Please capture or select the nutrition facts label of the product',
               style: TextStyle(
                   color:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                      Theme.of(context).colorScheme.onPrimary,
                   fontFamily: 'Poppins'),
             ),
             actions: [
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 },
                 child: const Text('Continue',
-                    style: TextStyle(fontFamily: 'Poppins')),
+                    style: TextStyle(fontFamily: 'Poppins', color: Colors.black,)),
               ),
             ],
           ),
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           ['Scan Label', 'Scan Food', 'Daily Intake'][_currentIndex],
           style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onPrimary,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w500),
         ),
@@ -306,7 +306,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         size: 70,
                         color: Theme.of(context)
                             .colorScheme
-                            .onSurface
+                            .onPrimary
                             .withOpacity(0.5),
                       ),
                     const SizedBox(height: 20),
@@ -519,7 +519,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               builder: (context) => AlertDialog(
                                 backgroundColor: Theme.of(context)
                                     .colorScheme
-                                    .cardBackground,
+                                    .surface,
                                 title: Text('Edit Serving Size',
                                     style: TextStyle(
                                         color: Theme.of(context)
@@ -709,7 +709,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     const Text(
                       'Serving size not found, please enter it manually',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
                     TextField(
                       keyboardType: TextInputType.number,
@@ -721,8 +721,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       decoration: const InputDecoration(
                           hintText: "Enter serving size in grams or ml",
-                          hintStyle: TextStyle(color: Colors.white54)),
-                      style: const TextStyle(color: Colors.white),
+                          hintStyle: TextStyle(color: Colors.black)),
+                      style: const TextStyle(color: Colors.black),
                     ),
                     if (_logic.getServingSize() > 0)
                       Padding(
@@ -741,7 +741,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text(
                           "Serving Size: ${_logic.getServingSize().round()} g",
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontFamily: 'Poppins'),
                         ),
@@ -754,7 +754,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             return ElevatedButton(
                                 style: ButtonStyle(
                                     backgroundColor: WidgetStateProperty.all(
-                                        Colors.white10)),
+                                        Colors.black)),
                                 onPressed: () {
                                   _logic.addToDailyIntake(context, (index) {
                                     setState(() {
@@ -822,7 +822,7 @@ class FoodScanPage extends StatefulWidget {
   State<FoodScanPage> createState() => _FoodScanPageState();
 }
 
-class _FoodScanPageState extends State<FoodScanPage> {
+class _FoodScanPageState extends State<FoodScanPage>{
   int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
@@ -915,7 +915,7 @@ class _FoodScanPageState extends State<FoodScanPage> {
                     child: Text(
                       'Analysis Results',
                       style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
+                          color: Theme.of(context).colorScheme.onPrimary,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Poppins'),
@@ -977,21 +977,63 @@ class _FoodScanPageState extends State<FoodScanPage> {
     );
   }
 
+  // Widget _buildImageCaptureButtons() {
+  //   return Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: [
+  //       ElevatedButton.icon(
+  //         icon: Icon(Icons.camera_alt_outlined,
+  //             color: Colors.black),
+  //         label: const Text(
+  //           "Take Photo",
+  //           style:
+  //               TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+  //         ),
+  //         style: ElevatedButton.styleFrom(
+  //           shape:
+  //               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+  //           backgroundColor: Theme.of(context).colorScheme.primary,
+  //           foregroundColor: Theme.of(context).colorScheme.onPrimary,
+  //           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+  //         ),
+  //         onPressed: () => _handleFoodImageCapture(ImageSource.camera),
+  //       ),
+  //       const SizedBox(width: 16),
+  //       ElevatedButton.icon(
+  //         icon: Icon(Icons.photo_library,
+  //             color: Theme.of(context).colorScheme.onSurface,
+  //         label: const Text(
+  //           "Gallery",
+  //           style:
+  //               TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+  //         ),
+  //         style: ElevatedButton.styleFrom(
+  //           shape:
+  //               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+  //           backgroundColor: Theme.of(context).colorScheme.cardBackground,
+  //           foregroundColor: Theme.of(context).colorScheme.onSurface,
+  //           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+  //         ),
+  //         onPressed: () => _handleFoodImageCapture(ImageSource.gallery),
+  //       ),
+  //     ],
+  //   );
+  // }
   Widget _buildImageCaptureButtons() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton.icon(
-          icon: Icon(Icons.camera_alt_outlined,
-              color: Theme.of(context).colorScheme.onPrimary),
+          icon: const Icon(Icons.camera_alt_outlined,
+              color: Colors.black),
           label: const Text(
             "Take Photo",
             style:
-                TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+            TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
           ),
           style: ElevatedButton.styleFrom(
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.onPrimary,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -1001,17 +1043,17 @@ class _FoodScanPageState extends State<FoodScanPage> {
         const SizedBox(width: 16),
         ElevatedButton.icon(
           icon: Icon(Icons.photo_library,
-              color: Theme.of(context).colorScheme.onPrimary),
+              color: Colors.black),
           label: const Text(
             "Gallery",
             style:
-                TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
+            TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400),
           ),
           style: ElevatedButton.styleFrom(
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            backgroundColor: Theme.of(context).colorScheme.cardBackground,
-            foregroundColor: Theme.of(context).colorScheme.onSurface,
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimary,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           ),
           onPressed: () => _handleFoodImageCapture(ImageSource.gallery),

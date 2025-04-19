@@ -24,8 +24,8 @@ class PortionButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: isSelected
-            ? Theme.of(context).colorScheme.primary
-            : Theme.of(context).colorScheme.cardBackground,
+            ? Theme.of(context).colorScheme.onSurface
+            : Theme.of(context).colorScheme.tertiary,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
@@ -56,7 +56,7 @@ class CustomPortionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.cardBackground,
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
@@ -64,7 +64,7 @@ class CustomPortionButton extends StatelessWidget {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            backgroundColor: Theme.of(context).colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.tertiary,
             title: Text('Enter Custom Amount',
                 style: TextStyle(
                     color: Theme.of(context).textTheme.bodyMedium!.color,

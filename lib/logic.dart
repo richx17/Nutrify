@@ -391,8 +391,8 @@ class Logic {
   Color getColorForPercent(double percent, BuildContext context) {
     if (percent > 1.0) return Colors.red; // Exceeded daily value
     if (percent > 0.8) return Colors.green; // High but not exceeded
-    if (percent > 0.6) return Colors.yellow; // Moderate
-    if (percent > 0.4) return Colors.yellow; // Low to moderate
+    if (percent > 0.6) return Colors.green; // Moderate
+    if (percent > 0.4) return Colors.blue; // Low to moderate
     return Colors.green; // Low
   }
 

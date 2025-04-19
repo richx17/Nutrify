@@ -16,16 +16,16 @@ Widget NutrientCard(BuildContext context, Map<String, dynamic> nutrient,
   return Container(
     padding: const EdgeInsets.all(16),
     decoration: BoxDecoration(
-      color: Colors.white24,
+      color: Theme.of(context).colorScheme.tertiary.withOpacity(0.4),//Colors.white24,
       borderRadius: BorderRadius.circular(20),
       border: Border.all(
-        color: Theme.of(context).colorScheme.outline.withOpacity(0.1),
+        color: Theme.of(context).colorScheme.tertiary.withOpacity(0.4),
       ),
       boxShadow: [
         BoxShadow(
           color: logic.getColorForPercent(percent, context).withOpacity(0.1),
-          blurRadius: 8,
-          offset: const Offset(0, 2),
+          blurRadius: 0,
+          offset: const Offset(5, 5),
         ),
       ],
     ),
@@ -43,7 +43,7 @@ Widget NutrientCard(BuildContext context, Map<String, dynamic> nutrient,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: Theme.of(context).colorScheme.onTertiary,
+                  color: Theme.of(context).colorScheme.onSecondary,
                   fontFamily: 'Poppins',
                 ),
                 maxLines: 1,
@@ -63,7 +63,7 @@ Widget NutrientCard(BuildContext context, Map<String, dynamic> nutrient,
         LinearProgressIndicator(
           value: percent,
           backgroundColor:
-              Theme.of(context).colorScheme.tertiary.withOpacity(0.1),
+              Theme.of(context).colorScheme.primary.withOpacity(0.1),
           valueColor: AlwaysStoppedAnimation<Color>(
               logic.getColorForPercent(percent, context)),
           minHeight: 6,
@@ -80,7 +80,7 @@ Widget NutrientCard(BuildContext context, Map<String, dynamic> nutrient,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: Theme.of(context).colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
             Text(

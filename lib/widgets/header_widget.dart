@@ -15,7 +15,7 @@ Widget HeaderCard(BuildContext context, DateTime selectedDate) {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onPrimary,
                 fontFamily: 'Poppins',
               ),
             ),
@@ -23,7 +23,7 @@ Widget HeaderCard(BuildContext context, DateTime selectedDate) {
               DateFormat('EEEE, MMMM d').format(selectedDate),
               style: TextStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.6),
                 fontFamily: 'Poppins',
               ),
             ),

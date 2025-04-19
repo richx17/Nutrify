@@ -52,7 +52,7 @@ class FoodNutrientTile extends StatelessWidget {
                     fontSize: 12,
                     color: Theme.of(context)
                         .colorScheme
-                        .onSurface
+                        .onPrimary
                         .withOpacity(0.6),
                   ),
                 ),

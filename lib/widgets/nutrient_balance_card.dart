@@ -16,21 +16,30 @@ class NutrientBalanceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      // decoration: BoxDecoration(
+      //   gradient: LinearGradient(
+      //     colors: [
+      //       Theme.of(context).colorScheme.tertiary,
+      //       Colors.transparent,
+      //     ],
+      //     begin: Alignment.topLeft,
+      //     end: Alignment.bottomRight,
+      //   ),
+      //   borderRadius: BorderRadius.circular(16),
+      //   border: Border.all(
+      //     color: Theme.of(context).colorScheme.tertiary,
+      //     width: 1,
+      //   ),
+      // ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Theme.of(context).colorScheme.secondary.withOpacity(0.2),
-            Colors.transparent,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+        color: Theme.of(context).cardColor, // or any solid color you prefer
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Theme.of(context).colorScheme.secondary.withOpacity(0.3),
-          width: 1,
+          color: Theme.of(context).colorScheme.primary,
+          width: 3,
         ),
       ),
+
       child: ExpansionTile(
         backgroundColor: Colors.transparent,
         collapsedBackgroundColor: Colors.transparent,
@@ -46,7 +55,7 @@ class NutrientBalanceCard extends StatelessWidget {
               child: Text(
                 issue,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Poppins',

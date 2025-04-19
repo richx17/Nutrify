@@ -100,7 +100,7 @@ class _AskAiWidgetState extends State<AskAiWidget>
               children: [
                 const Icon(
                   Icons.auto_awesome,
-                  color: Color.fromARGB(255, 0, 21, 255),
+                  color: Color.fromARGB(255, 76, 175, 80),
                 ),
                 const SizedBox(width: 12),
                 Expanded(

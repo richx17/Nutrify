@@ -22,7 +22,7 @@ class FoodItemCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.cardBackground,
+        color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -38,7 +38,12 @@ class FoodItemCard extends StatelessWidget {
         children: [
           // Header
           Container(
-            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(16),
+              ),
+            ),//color: Theme.of(context).colorScheme.primary,//.withValues(alpha: 0.1),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
@@ -50,7 +55,7 @@ class FoodItemCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Colors.white,//Theme.of(context).colorScheme.primary,
                       ),
                       overflow: TextOverflow.visible,
                       softWrap: true,
@@ -77,7 +82,7 @@ class FoodItemCard extends StatelessWidget {
                         icon: Icon(
                           Icons.edit,
                           size: 20,
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Colors.white,//Theme.of(context).colorScheme.primary,
                         ),
                         onPressed: () => _showEditDialog(context),
                       ),

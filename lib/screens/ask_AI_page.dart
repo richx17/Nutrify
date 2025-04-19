@@ -108,7 +108,15 @@ class _AskAiPageState extends State<AskAiPage> {
             ),
           ),
         ),
-        title: const Text('Ask AI'),
+        title: const Text(
+          'Ask AI',
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Poppins',
+          ),
+        ),
+
+        // title: const Text('Ask AI'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -252,7 +260,7 @@ class _AskAiPageState extends State<AskAiPage> {
                       fontFamily: 'Poppins',
                     ),
                     backgroundColor:
-                        Theme.of(context).colorScheme.cardBackground,
+                        Theme.of(context).colorScheme.tertiary,
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.surface,
                       borderRadius: BorderRadius.circular(28),
@@ -262,7 +270,7 @@ class _AskAiPageState extends State<AskAiPage> {
                       markdownStyle:
                           MarkdownStyleSheet.fromTheme(Theme.of(context)),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.cardBackground,
+                        color: Theme.of(context).colorScheme.tertiary,
                         borderRadius: BorderRadius.circular(28),
                       ),
                       iconDecoration: BoxDecoration(

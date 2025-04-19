@@ -56,8 +56,8 @@ class _FoodInputFormState extends State<FoodInputForm> {
               decoration: BoxDecoration(
                 color: Theme.of(context)
                     .colorScheme
-                    .onSurface
-                    .withValues(alpha: 0.5),
+                    .tertiary,
+                    // .withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(3),
               ),
             ),
@@ -66,7 +66,7 @@ class _FoodInputFormState extends State<FoodInputForm> {
               children: [
                 Icon(
                   Icons.restaurant_menu,
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
                 const SizedBox(width: 8),
                 Text(
@@ -75,7 +75,7 @@ class _FoodInputFormState extends State<FoodInputForm> {
                     fontFamily: 'Poppins',
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.onSurface,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
               ],
@@ -99,11 +99,11 @@ class _FoodInputFormState extends State<FoodInputForm> {
                             labelStyle: TextStyle(
                               color: Theme.of(context)
                                   .colorScheme
-                                  .onSurface
-                                  .withValues(alpha: 0.5),
+                                  .onPrimary,
+                                  // .withValues(alpha: 0.5),
                             ),
                             fillColor:
-                                Theme.of(context).colorScheme.cardBackground,
+                                Theme.of(context).colorScheme.tertiary.withOpacity(0.4),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(6),
                               borderSide: BorderSide(
@@ -137,8 +137,8 @@ class _FoodInputFormState extends State<FoodInputForm> {
                             Icons.remove,
                             color: Theme.of(context)
                                 .colorScheme
-                                .onSurface
-                                .withValues(alpha: 0.5),
+                                .onPrimary,
+                                // .withValues(alpha: 0.5),
                           ),
                           onPressed: () {
                             setState(() {
@@ -164,18 +164,19 @@ class _FoodInputFormState extends State<FoodInputForm> {
                     Icons.add,
                     color: Theme.of(context)
                         .colorScheme
-                        .onSurface
-                        .withValues(alpha: 0.5),
+                        .onPrimary,
+                        // .withValues(alpha: 0.5),
                   ),
                 ),
                 Text(
                   "Add another item",
                   style: TextStyle(
                     fontFamily: 'Poppins',
+                    fontSize: 20,
                     color: Theme.of(context)
                         .colorScheme
-                        .onSurface
-                        .withValues(alpha: 0.5),
+                        .onPrimary,
+                        // .withValues(alpha: 0.5),
                   ),
                 ),
               ],
@@ -225,8 +226,8 @@ class _FoodInputFormState extends State<FoodInputForm> {
                       Icons.auto_awesome,
                       color: Theme.of(context)
                           .colorScheme
-                          .onSurface
-                          .withValues(alpha: 0.8),
+                          .onPrimary,
+                          // .withValues(alpha: 0.8),
                       size: 24,
                     ),
                     const SizedBox(width: 8),
@@ -234,12 +235,12 @@ class _FoodInputFormState extends State<FoodInputForm> {
                       "Analyze",
                       style: TextStyle(
                         fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
                         fontSize: 20,
                         color: Theme.of(context)
                             .colorScheme
-                            .onSurface
-                            .withValues(alpha: 0.8),
+                            .onSurface,
+                            // .withValues(alpha: 0.8),
                       ),
                     ),
                   ],
