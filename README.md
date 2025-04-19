@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 q
 A Flutter application that helps users track their nutritional intake by analyzing food product labels and meals using AI.
 
@@ -72,3 +73,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Google Generative AI for the Gemini API
 - Flutter team for the amazing framework
 
+=======
+# Nutrify
+An AI-powered nutrition tracker app that analyzes food from labels and images using Google’s Gemini API.
+>>>>>>> 232ce4053afd12457c5bd159cd81c0f2465c9d34
